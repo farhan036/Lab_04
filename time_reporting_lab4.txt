@@ -1,0 +1,95 @@
+Timing Report
+
+Slack:                    inf
+  Source:                 x[30]
+                            (input port)
+  Destination:            result[30]
+                            (output port)
+  Path Group:             (none)
+  Path Type:              Max at Slow Process Corner
+  Data Path Delay:        22.656ns  (logic 8.281ns (36.550%)  route 14.375ns (63.450%))
+  Logic Levels:           30  (CARRY4=16 IBUF=1 LUT2=1 LUT3=2 LUT4=2 LUT5=3 LUT6=4 OBUF=1)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+    V22                                               0.000     0.000 f  x[30] (IN)
+                         net (fo=0)                   0.000     0.000    x[30]
+    V22                  IBUF (Prop_ibuf_I_O)         0.935     0.935 f  x_IBUF[30]_inst/O
+                         net (fo=8, routed)           1.989     2.924    addsub/x_IBUF[30]
+    SLICE_X1Y58          LUT5 (Prop_lut5_I3_O)        0.105     3.029 r  addsub/swap1_carry__1_i_10/O
+                         net (fo=6, routed)           1.010     4.039    addsub/x_is_zero0
+    SLICE_X0Y52          LUT4 (Prop_lut4_I3_O)        0.105     4.144 r  addsub/swap1_carry__1_i_5/O
+                         net (fo=1, routed)           0.000     4.144    swap_op/x[24]_0[3]
+    SLICE_X0Y52          CARRY4 (Prop_carry4_S[3]_CO[3])
+                                                      0.332     4.476 r  swap_op/swap1_carry__1/CO[3]
+                         net (fo=1, routed)           0.801     5.277    swap_op/swap1_carry__1_n_0
+    SLICE_X1Y52          LUT3 (Prop_lut3_I1_O)        0.105     5.382 r  swap_op/normalized_exp[6]_i_2/O
+                         net (fo=116, routed)         0.740     6.122    swap_op/swap
+    SLICE_X3Y52          LUT3 (Prop_lut3_I2_O)        0.121     6.243 r  swap_op/exp_diff_carry_i_2/O
+                         net (fo=1, routed)           0.000     6.243    align/DI[2]
+    SLICE_X3Y52          CARRY4 (Prop_carry4_DI[2]_CO[3])
+                                                      0.290     6.533 r  align/exp_diff_carry/CO[3]
+                         net (fo=1, routed)           0.000     6.533    align/exp_diff_carry_n_0
+    SLICE_X3Y53          CARRY4 (Prop_carry4_CI_O[1])
+                                                      0.265     6.798 f  align/exp_diff_carry__0/O[1]
+                         net (fo=5, routed)           0.820     7.618    align/exp_diff[5]
+    SLICE_X4Y53          LUT5 (Prop_lut5_I2_O)        0.250     7.868 f  align/small_mantissa_masked0_carry_i_6/O
+                         net (fo=9, routed)           0.963     8.831    align/small_mantissa_masked0_carry_i_6_n_0
+    SLICE_X6Y50          LUT4 (Prop_lut4_I0_O)        0.105     8.936 r  align/small_mantissa_masked0_carry_i_1/O
+                         net (fo=1, routed)           0.254     9.190    align/small_mantissa_masked1[0]
+    SLICE_X5Y50          CARRY4 (Prop_carry4_CYINIT_CO[3])
+                                                      0.480     9.670 r  align/small_mantissa_masked0_carry/CO[3]
+                         net (fo=1, routed)           0.000     9.670    align/small_mantissa_masked0_carry_n_0
+    SLICE_X5Y51          CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.098     9.768 r  align/small_mantissa_masked0_carry__0/CO[3]
+                         net (fo=1, routed)           0.000     9.768    align/small_mantissa_masked0_carry__0_n_0
+    SLICE_X5Y52          CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.098     9.866 r  align/small_mantissa_masked0_carry__1/CO[3]
+                         net (fo=1, routed)           0.000     9.866    align/small_mantissa_masked0_carry__1_n_0
+    SLICE_X5Y53          CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.098     9.964 r  align/small_mantissa_masked0_carry__2/CO[3]
+                         net (fo=1, routed)           0.000     9.964    align/small_mantissa_masked0_carry__2_n_0
+    SLICE_X5Y54          CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.098    10.062 r  align/small_mantissa_masked0_carry__3/CO[3]
+                         net (fo=1, routed)           0.000    10.062    align/small_mantissa_masked0_carry__3_n_0
+    SLICE_X5Y55          CARRY4 (Prop_carry4_CI_O[1])
+                                                      0.265    10.327 f  align/small_mantissa_masked0_carry__4/O[1]
+                         net (fo=1, routed)           0.661    10.988    align/small_mantissa_masked0_carry__4_n_6
+    SLICE_X5Y56          LUT6 (Prop_lut6_I0_O)        0.250    11.238 f  align/result_OBUF[3]_inst_i_18/O
+                         net (fo=1, routed)           0.770    12.008    align/result_OBUF[3]_inst_i_18_n_0
+    SLICE_X6Y54          LUT5 (Prop_lut5_I4_O)        0.105    12.113 f  align/result_OBUF[3]_inst_i_7/O
+                         net (fo=1, routed)           0.233    12.345    align/result_OBUF[3]_inst_i_7_n_0
+    SLICE_X4Y54          LUT6 (Prop_lut6_I3_O)        0.105    12.450 r  align/result_OBUF[3]_inst_i_3/O
+                         net (fo=1, routed)           0.000    12.450    norm/normalized_mantissa_reg[0]_0[0]
+    SLICE_X4Y54          CARRY4 (Prop_carry4_S[0]_CO[3])
+                                                      0.440    12.890 r  norm/result_OBUF[3]_inst_i_2/CO[3]
+                         net (fo=1, routed)           0.000    12.890    norm/result_OBUF[3]_inst_i_2_n_0
+    SLICE_X4Y55          CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.098    12.988 r  norm/result_OBUF[7]_inst_i_2/CO[3]
+                         net (fo=1, routed)           0.000    12.988    norm/result_OBUF[7]_inst_i_2_n_0
+    SLICE_X4Y56          CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.098    13.086 r  norm/result_OBUF[11]_inst_i_2/CO[3]
+                         net (fo=1, routed)           0.000    13.086    norm/result_OBUF[11]_inst_i_2_n_0
+    SLICE_X4Y57          CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.098    13.184 r  norm/result_OBUF[15]_inst_i_2/CO[3]
+                         net (fo=1, routed)           0.000    13.184    norm/result_OBUF[15]_inst_i_2_n_0
+    SLICE_X4Y58          CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.098    13.282 r  norm/result_OBUF[19]_inst_i_2/CO[3]
+                         net (fo=1, routed)           0.000    13.282    norm/result_OBUF[19]_inst_i_2_n_0
+    SLICE_X4Y59          CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.098    13.380 r  norm/result_OBUF[22]_inst_i_2/CO[3]
+                         net (fo=1, routed)           0.000    13.380    norm/result_OBUF[22]_inst_i_2_n_0
+    SLICE_X4Y60          CARRY4 (Prop_carry4_CI_CO[0])
+                                                      0.216    13.596 r  norm/result_OBUF[24]_inst_i_2/CO[0]
+                         net (fo=29, routed)          1.424    15.020    norm/p_0_in
+    SLICE_X0Y58          LUT6 (Prop_lut6_I2_O)        0.309    15.329 r  norm/result_OBUF[29]_inst_i_2/O
+                         net (fo=3, routed)           0.391    15.721    norm/result_OBUF[29]_inst_i_2_n_0
+    SLICE_X0Y58          LUT2 (Prop_lut2_I1_O)        0.105    15.826 r  norm/result_OBUF[30]_inst_i_2/O
+                         net (fo=1, routed)           0.551    16.377    norm/result_OBUF[30]_inst_i_2_n_0
+    SLICE_X0Y58          LUT6 (Prop_lut6_I3_O)        0.105    16.482 r  norm/result_OBUF[30]_inst_i_1/O
+                         net (fo=1, routed)           3.768    20.250    result_OBUF[30]
+    E22                  OBUF (Prop_obuf_I_O)         2.406    22.656 r  result_OBUF[30]_inst/O
+                         net (fo=0)                   0.000    22.656    result[30]
+    E22                                                               r  result[30] (OUT)
+  -------------------------------------------------------------------    -------------------
+
